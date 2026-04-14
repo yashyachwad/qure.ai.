@@ -14,7 +14,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000/transcribe';
+// const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000/transcribe';
+const PYTHON_SERVICE_URL= "https://qure-ai.onrender.com";
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/hospital_management';
 
 // Middleware
