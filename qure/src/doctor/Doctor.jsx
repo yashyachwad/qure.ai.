@@ -2,14 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Mic, Square, Loader2, CheckCircle2, Clock, AlertCircle, Save, FileText, UserCircle2, AlertTriangle } from 'lucide-react';
 
-// const BACKEND_AUDIO_URL = `/api/records/voice`;
-// const BACKEND_QUEUE_URL = `/api/queue`;
-
-
-const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL || '';
 const BACKEND_AUDIO_URL = `${BACKEND_BASE_URL}/api/records/voice`;
 const BACKEND_QUEUE_URL = `${BACKEND_BASE_URL}/api/queue`;
-// up changed
+
 const Doctor = () => {
   const [auth, setAuth] = useState(true);
   const [password, setPassword] = useState("");
@@ -125,7 +121,7 @@ const Doctor = () => {
         patientId: selectedPatient._id,
         mainProblem: selectedPatient.symptoms
       };
-      await axios.put(`/api/queue/${selectedPatient._id}/summary`, finalSummary);
+      await axios.put(`${BACKEND_QUEUE_URL}/${selectedPatient._id}/summary`, finalSummary);
       setSuccessMsg("Summary sent to patient!");
 
       // Remove patient from local view instantly
