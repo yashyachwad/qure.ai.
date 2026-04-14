@@ -96,9 +96,8 @@ const Doctor = () => {
     formData.append('audio', audioBlob, 'recording.webm');
 
     try {
-      const response = await axios.post(BACKEND_AUDIO_URL, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const response = await axios.post(BACKEND_AUDIO_URL, formData);
+    
       setCurrentSummary(response.data.data);
     } catch (err) {
       console.error("Error processing recording:", err);
