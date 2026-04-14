@@ -17,6 +17,9 @@ const Public = () => {
 
   const [fullQueue, setFullQueue] = useState([]);
 
+
+const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL;
+  
   // Load account from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem('qure_accountSession');
@@ -30,7 +33,7 @@ const Public = () => {
     if (!phone || phone.length < 5) return setError('Enter a valid phone number');
     setError(''); setLoading(true);
     try {
-      await axios.post('/api/patient/otp/send', { phone });
+      await axios.post(`${BACKEND_BASE_URL}/api/patient/otp/send`, { phone });
       setStep('OTP');
     } catch (err) {
       setError('Failed to send OTP.');
@@ -43,7 +46,7 @@ const Public = () => {
     if (!otp) return setError('Enter OTP');
     setError(''); setLoading(true);
     try {
-      const res = await axios.post('/api/patient/otp/verify', { phone, otp });
+      const res = await axios.post(`${BACKEND_BASE_URL}/api/patient/otp/verify`, { phone, otp });
       if (res.data.success) {
         setAccount(res.data.account);
         localStorage.setItem('qure_accountSession', JSON.stringify(res.data.account));
@@ -75,7 +78,7 @@ const Public = () => {
     setError(''); setLoading(true);
     try {
       const submission = { ...formData, phone: account.phone };
-      const response = await axios.post(`/api/queue`, submission);
+      const response = await axios.post(`${BACKEND_BASE_URL}/api/queue`, submission);
       if (response.data && response.data.data) {
         setQueueNumber(response.data.data.queueNumber);
         setPatientId(response.data.data._id);
@@ -98,7 +101,7 @@ const Public = () => {
 
   const fetchQueue = async () => {
     try {
-      const res = await axios.get('/api/queue');
+      const res = await axios.get(`${BACKEND_BASE_URL}/api/queue`);
       setFullQueue(res.data);
     } catch (e) { console.error(e); }
   };
@@ -109,7 +112,7 @@ const Public = () => {
       intervalId = setInterval(async () => {
         try {
           fetchQueue();
-          const res = await axios.get(`/api/queue/${patientId}`);
+          const res = await axios.get(`${BACKEND_BASE_URL}/api/queue/${patientId}`);
           if (res.data.status === 'completed' && res.data.summaryCard) {
             setSummaryCard(res.data.summaryCard);
             setStep('SUMMARY');
@@ -125,7 +128,7 @@ const Public = () => {
 
   const handleDone = async () => {
     try {
-      const res = await axios.post('/api/patient/otp/verify', { phone: account.phone, otp: '123456' });
+      const res = await axios.post(`${BACKEND_BASE_URL}/api/patient/otp/verify`, { phone: account.phone, otp: '123456' });
       if (res.data.success) {
         setAccount(res.data.account);
         localStorage.setItem('qure_accountSession', JSON.stringify(res.data.account));
