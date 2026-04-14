@@ -60,3 +60,7 @@ async def transcribe_audio(audio: UploadFile = File(...)):
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.get("/")
+def home():
+    return {"message": "Whisper API running"}
