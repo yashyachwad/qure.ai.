@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import about from "../assets/about.png"
 import tick from "../assets/tick.png"
-import Li from "../assets/linkedin.png"
+import Li from "../assets/Linkedin.png"
 import { useNavigate } from 'react-router-dom'
 
 
