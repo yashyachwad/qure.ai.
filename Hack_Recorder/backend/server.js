@@ -14,8 +14,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-// const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000/transcribe';
-const PYTHON_SERVICE_URL= "https://qure-ai.onrender.com";
+ // const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000/transcribe' ||   "https://qure-ai.onrender.com" ;
+//const PYTHON_SERVICE_URL= "https://qure-ai.onrender.com";
+const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL;
+
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/hospital_management';
 
 // Middleware
@@ -94,7 +96,8 @@ app.post('/api/records/voice', upload.single('audio'), async (req, res) => {
             filename: req.file.originalname || 'audio.wav'
         });
 
-        const pythonResponse = await axios.post(PYTHON_API_URL, formData, {
+        // const pythonResponse = await axios.post(PYTHON_API_URL, formData, {
+        const pythonResponse = await axios.post(`${PYTHON_SERVICE_URL}/transcribe`, formData, {
             headers: {
                 ...formData.getHeaders(),
             },
