@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://qure-ai-backend.onrender.com';
+
 const Public = () => {
   const [step, setStep] = useState('LOGIN'); // LOGIN, OTP, DASHBOARD, FORM, QUEUE, SUMMARY
   const [phone, setPhone] = useState('');
@@ -17,9 +19,6 @@ const Public = () => {
 
   const [fullQueue, setFullQueue] = useState([]);
 
-
-const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL;
-  
   // Load account from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem('qure_accountSession');
