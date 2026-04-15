@@ -102,7 +102,7 @@ app.post('/api/records/voice', upload.single('audio'), async (req, res) => {
         const pythonResponse = await axios.post(PYTHON_API_URL, formData, {
             headers: {
                 ...formData.getHeaders(),
-            }, timeout: 60000 // 60 seconds
+            }, timeout: 120000 // 60 seconds
         });
 
         const transcribedText = pythonResponse.data.text;
