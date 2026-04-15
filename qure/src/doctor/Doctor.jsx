@@ -89,11 +89,11 @@ const Doctor = () => {
   };
 
   const handleStopRecording = async () => {
-    const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+    const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' }); // wabm to wav
 
     setIsProcessing(true);
     const formData = new FormData();
-    formData.append('audio', audioBlob, 'recording.webm');
+    formData.append('audio', audioBlob, 'recording.wav');  //wabm to wav
 
     try {
       const response = await axios.post(BACKEND_AUDIO_URL, formData);
