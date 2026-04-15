@@ -19,7 +19,7 @@ app.add_middleware(
 # Initialize the model (downloads the base model if not already present)
 # "base" provides a good balance between speed and accuracy for free local usage.
 print("Loading Whisper Model...")
-model = WhisperModel("base", device="cpu", compute_type="int8")
+model = WhisperModel("tiny", device="cpu", compute_type="int8") // base -> tiny 
 print("Whisper Model loaded successfully.")
 
 # Create temp directory for audio files
