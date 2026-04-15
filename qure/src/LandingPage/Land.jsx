@@ -23,7 +23,7 @@ const Land = () => {
         </h1>
         <p className='lg:text-xl text-sm text-slate-600 ml-12' >Prioritize patients based on medical severity & auto-generate structured doctor notes using speech AI.</p>
         <p className=' text-sm text-gray-600 mt-32'>Trusted AI assistance. Final decision always by medical staff.</p>
-        <div className='lg:h-32 h-48  w-96 rounded-lg bg-gradient-to-b from-indigo-950 to-slate-700  flex items-center justify-center  gap-16 mt-10 lg:mt-2 border border-purple-600'>
+        <div className='lg:h-32 h-48  w-96 rounded-lg bg-gradient-to-b from-indigo-950 to-black  flex items-center justify-center  gap-16 mt-10 lg:mt-2 border border-purple-600'>
           <button onClick={() => navigate("/public")} className='px-4 py-2 flex flex-col items-center border bg-[linear-gradient(45deg,transparent_90%,purple_10%)] border-purple-500 rounded-md h-14 text-gray-500 w-32 transition-all  ease-in-out hover:border-orange-500  hover:text-white  hover:bg-[linear-gradient(45deg,transparent_90%,orange_10%)] '>
             <img className='h-6' src={patient} alt="" />
             <h1>Patient</h1>
