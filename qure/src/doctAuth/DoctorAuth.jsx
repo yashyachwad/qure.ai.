@@ -12,7 +12,7 @@ const DoctorAuth = () => {
     const [error, setError] = useState("");
 
 
-    const Doct_pass = "Dnyanesh";
+    const Doct_pass = "Pass";
 
     function handleLogin(params) {
         if (password == Doct_pass) {

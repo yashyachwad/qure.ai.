@@ -18,7 +18,7 @@ const Nav = () => {
       <div className='fixed top-0 left-0 h-16 inset-0 bg-white/10 backdrop-blur-lg   z-50 border-b border-purple-400  shadow-sm  shadow-blue-700 flex justify-between items-center '>
         <div className='flex items-center justify-between w-[24%]'>
           <div onClick={() => navigate('/')} className='text-blue-700 flex items-center hover:cursor-pointer font-protest text-3xl ml-4 lg:ml-12 '>  <img className='h-7 px-3 border-r mr-3' src={tick} alt="" />  <span className='text-blue-100 '>qure</span>.ai </div>
-          <button onClick={() => navigate('/')} className='hidden lg:flex px-2 border rounded-md hover:bg-blue-300 text-white hover:text-black border-gray-500'>Back</button>
+          <button onClick={() => navigate('/')} className='hidden  px-2 border rounded-md hover:bg-blue-300 text-white hover:text-black border-gray-500'>Back</button>
         </div>
         <div className='flex justify-center mr-5'>
           <button className=''><img onClick={() => setShowAbout(!showAbout)} className='h-8 ' src={about} alt="" /></button>
