@@ -39,7 +39,13 @@ async def transcribe_audio(audio: UploadFile = File(...)):
         print(f"File saved to {temp_filename}. Starting transcription...")
         
         # Transcribe
-        segments, info = model.transcribe(temp_filename, beam_size=5)
+        # segments, info = model.transcribe(temp_filename, beam_size=5)    changed with following 
+        segments, info = model.transcribe(
+                temp_filename,
+                beam_size=1,          # faster
+                vad_filter=True,      # skip silence
+                language="en"   # skip auto-detection
+            )
         
         transcription_text = ""
         for segment in segments:
