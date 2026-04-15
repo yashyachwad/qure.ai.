@@ -6,28 +6,29 @@ import doctor from "../assets/doctor.png"
 import crowed from "../assets/crowed.png"
 import wrong from "../assets/wrong.png"
 import correct from "../assets/correct.png"
-import BG from "../assets/LandingBG.png"
+// import BG from "../assets/LandingBG.png"
 
 const Land = () => {
   const navigate = useNavigate();
 
 
-
+  // style={{ backgroundImage: `url(${BG})` }} 
   return (
     <>
-      <div style={{ backgroundImage: `url(${BG})` }} className='h-screen w-screen  font-outfit text-stone-100 flex flex-col   items-center gap-6'>
-        <h1 className='lg:text-5xl text-2xl flex flex-col items-center justify-center  font-strike animate-pulse mx-auto mt-32'>
+      <div 
+      className='h-screen w-screen bg-gradient-to-b from-slate-900 to-black  font-outfit text-white flex flex-col   items-center gap-6'>
+     <h1 className='lg:text-5xl text-2xl flex flex-col items-center justify-center  font-strike animate-pulse mx-auto mt-32'>
           <span >AI-POWERED </span>
           <span >VOICE NOTES & QUEUE OPTIMISER</span>
         </h1>
-        <p className='lg:text-xl text-sm text-gray-400 ml-12' >Prioritize patients based on medical severity & auto-generate structured doctor notes using speech AI.</p>
+        <p className='lg:text-xl text-sm text-slate-600 ml-12' >Prioritize patients based on medical severity & auto-generate structured doctor notes using speech AI.</p>
         <p className=' text-sm text-gray-600 mt-32'>Trusted AI assistance. Final decision always by medical staff.</p>
-        <div className='lg:h-32 h-48  w-96 rounded-lg bg-gray-900 flex items-center justify-center  gap-16 mt-10 lg:mt-2 border border-blue-500'>
-          <button onClick={() => navigate("/public")} className='px-4 py-2 flex flex-col items-center border bg-[linear-gradient(45deg,transparent_90%,blue_10%)] border-blue-500 rounded-md h-14 text-gray-500 w-32 transition-all  ease-in-out hover:border-orange-500  hover:text-white  hover:bg-[linear-gradient(45deg,transparent_90%,orange_10%)] '>
+        <div className='lg:h-32 h-48  w-96 rounded-lg bg-gradient-to-b from-indigo-950 to-slate-700  flex items-center justify-center  gap-16 mt-10 lg:mt-2 border border-purple-600'>
+          <button onClick={() => navigate("/public")} className='px-4 py-2 flex flex-col items-center border bg-[linear-gradient(45deg,transparent_90%,purple_10%)] border-purple-500 rounded-md h-14 text-gray-500 w-32 transition-all  ease-in-out hover:border-orange-500  hover:text-white  hover:bg-[linear-gradient(45deg,transparent_90%,orange_10%)] '>
             <img className='h-6' src={patient} alt="" />
             <h1>Patient</h1>
           </button>
-          <button onClick={() => navigate('/doctorAuth')} className='px-4 py-2 flex flex-col items-center border border-blue-500 bg-[linear-gradient(45deg,transparent_90%,blue_10%)] rounded-md h-14 text-gray-500 w-32  transition-all  ease-in-out hover:border-orange-500  hover:text-white  hover:bg-[linear-gradient(45deg,transparent_90%,orange_10%)]  '>
+          <button onClick={() => navigate('/doctorAuth')} className='px-4 py-2 flex flex-col items-center border border-purple-500 bg-[linear-gradient(45deg,transparent_90%,purple_10%)] rounded-md h-14 text-gray-500 w-32  transition-all  ease-in-out hover:border-orange-500  hover:text-white  hover:bg-[linear-gradient(45deg,transparent_90%,orange_10%)]  '>
             <img className='h-6' src={doctor} alt="" />
             <h1>Doctor</h1>
           </button>
@@ -36,9 +37,9 @@ const Land = () => {
       </div>
 
 
-      <div className='bg-gray-600 flex flex-col justify-start items-center py-10 min-h-screen'>
+      <div className='bg-gradient-to-b from-black to-slate-900 flex flex-col justify-start items-center py-10 min-h-screen'>
         <h1 className='text-3xl my-5 text-white'>WHY <span className='text-blue-400'>qure.ai</span> ?</h1>
-        <div className='flex flex-col md:flex-row w-full max-w-4xl justify-center items-stretch px-4'>
+        <div className='flex flex-col md:flex-row w-[75%] justify-center items-stretch px-4'>
           <img className='w-full md:w-[50%] object-cover border-blue-200 border rounded-t-xl md:rounded-bl-xl md:rounded-tl-xl md:rounded-tr-none shadow-inner shadow-blue-500' src={crowed} alt="" />
           <div className='w-full md:w-[50%] bg-stone-900 text-gray-200 flex flex-col gap-4 border border-white md:border-l-0 rounded-b-xl md:rounded-tr-xl md:rounded-br-xl md:rounded-bl-none shadow-blue-500 p-6 text-lg md:text-xl justify-center'>
             <span className="font-bold text-xl text-blue-300">9:30 AM. OPD is full.</span>
@@ -48,13 +49,13 @@ const Land = () => {
         </div>
 
         <div className="flex flex-col gap-4 lg:w-[75%] w-2xl px-4 mt-10">
-          <span className='flex gap-4 p-4 border border-black rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
+          <span className='flex gap-4 p-4 border border-slate-600 rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
             <img className='h-6 flex-shrink-0' src={correct} alt="" />Intelligent OPD Queue Management
           </span>
-          <span className='flex gap-4 p-4 border border-black rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
+          <span className='flex gap-4 p-4 border border-slate-600 rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
             <img className='h-6 flex-shrink-0' src={correct} alt="" />Voice-to-Structured Medical Summary card
           </span>
-          <span className='flex gap-4 p-4 border border-black rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
+          <span className='flex gap-4 p-4 border border-slate-600 rounded-md w-full text-lg md:text-xl text-white justify-start items-center bg-[linear-gradient(90deg,transparent_97%,gray)] transform ease-in-out duration-300 hover:scale-[1.01] hover:cursor-pointer shadow-lg'>
             <img className='h-6 flex-shrink-0' src={correct} alt="" />AI-Based Smart Patient Prioritization
           </span>
         </div>
