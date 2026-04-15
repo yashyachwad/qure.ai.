@@ -344,7 +344,7 @@ const Public = () => {
             </div>
 
             {summaryCard.createdAt && (
-              <div className="ml-2 flex flex-col gap-1 items-end justify-center bg-black/40 px-3 py-2 rounded-xl border border-white/10 shrink-0">
+              <div className="ml-2 mt-10 flex flex-col gap-1 items-start justify-center bg-black/40 px-3 py-2 rounded-xl border border-white/10 shrink-0">
                 <p className='text-green-400 text-[9px] font-bold tracking-widest uppercase'>Created Time</p>
                 <p className="text-[10px] md:text-[11px] font-mono text-gray-300">{summaryCard.createdAt.split(',')[1] || summaryCard.createdAt}</p>
                 <p className="text-[9px] font-mono text-gray-500">{summaryCard.createdAt.split(',')[0]}</p>
