@@ -77,6 +77,12 @@ function parseMedicalText(text) {
     return result;
 }
 
+// to check backend alive 
+app.get('/', (req, res) => {
+  res.send("Backend running 🚀");
+});
+
+
 // Routes
 app.post('/api/records/voice', upload.single('audio'), async (req, res) => {
     try {
@@ -119,7 +125,8 @@ app.post('/api/records/voice', upload.single('audio'), async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Error processing voice record:", error.message);
+        // console.error("Error processing voice record:", error.message);
+        console.error("Error processing voice record:", error.response?.data || error.message);
         res.status(500).json({ error: "Failed to process voice recording" });
 
         // Ensure cleanup even on error
