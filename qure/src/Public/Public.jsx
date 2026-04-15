@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://qure-ai-backend.onrender.com';
+const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_URL || '';
 
 const Public = () => {
   const [step, setStep] = useState('LOGIN'); // LOGIN, OTP, DASHBOARD, FORM, QUEUE, SUMMARY

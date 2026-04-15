@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const PYTHON_API_URL = process.env.PYTHON_API_URL || 'https://qure-ai-python.onrender.com/transcribe';
+const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000/transcribe';
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://yashyechwad420_db_user:EXs5pKqEc51Ebeib@qureaicluster.wpwyquy.mongodb.net/hospital_management?appName=qureaicluster';
 
 // Middleware
